@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="20" role="img" aria-label="AumOS Self-Assessed | Bronze">
+  <title>AumOS Self-Assessed | Bronze</title>
+  <linearGradient id="s" x2="0" y2="100%">
+    <stop offset="0" stop-color="#bbb" stop-opacity=".1"/>
+    <stop offset="1" stop-opacity=".1"/>
+  </linearGradient>
+  <clipPath id="r">
+    <rect width="220" height="20" rx="3" fill="#fff"/>
+  </clipPath>
+  <g clip-path="url(#r)">
+    <rect width="140" height="20" fill="#555"/>
+    <rect x="140" width="80" height="20" fill="#CD7F32"/>
+    <rect width="220" height="20" fill="url(#s)"/>
+  </g>
+  <g fill="#fff" text-anchor="middle" font-family="DejaVu Sans,Verdana,Geneva,sans-serif" font-size="11">
+    <text x="71" y="15" fill="#010101" fill-opacity=".3">AumOS Self-Assessed</text>
+    <text x="71" y="14">AumOS Self-Assessed</text>
+    <text x="180" y="15" fill="#010101" fill-opacity=".3">Bronze</text>
+    <text x="180" y="14">Bronze</text>
+  </g>
+</svg>

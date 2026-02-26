@@ -1,0 +1,47 @@
+{
+  "name": "@aumos/badge-generator",
+  "version": "0.1.0",
+  "description": "SVG badge generator for the AumOS Certified badge program",
+  "license": "Apache-2.0",
+  "author": "MuVeraAI Corporation",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aumos-ai/trust-certification-toolkit.git",
+    "directory": "badges/generator"
+  },
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src"
+  },
+  "dependencies": {
+    "zod": "^3.22.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.4.0"
+  },
+  "keywords": [
+    "aumos",
+    "certification",
+    "badge",
+    "svg",
+    "governance",
+    "ai-agents"
+  ]
+}
