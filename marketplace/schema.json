@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aumos.ai/schemas/marketplace-listing/v1.json",
+  "title": "AumOS Certified Marketplace Listing",
+  "description": "Schema for self-assessed certified agent listings in the AumOS Certified public directory. All listings represent self-assessed conformance — no AumOS verification is implied.",
+  "type": "object",
+  "required": [
+    "listing_id",
+    "agent_name",
+    "vendor",
+    "certification_level",
+    "certification_date",
+    "certification_expiry",
+    "protocols_passed",
+    "pass_rates",
+    "self_assessed",
+    "report_hash"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "listing_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Unique identifier for this marketplace listing (UUID v4)."
+    },
+    "agent_name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 256,
+      "description": "Human-readable name of the agent or implementation being listed."
+    },
+    "vendor": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 256,
+      "description": "Name of the organisation or individual that produced and assessed the agent."
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 2048,
+      "description": "Optional plain-text description of the agent's purpose and capabilities."
+    },
+    "certification_level": {
+      "type": "string",
+      "enum": ["bronze", "silver", "gold", "platinum"],
+      "description": "The self-assessed certification level achieved."
+    },
+    "certification_date": {
+      "type": "string",
+      "format": "date",
+      "description": "ISO 8601 date on which the self-assessment was completed (YYYY-MM-DD)."
+    },
+    "certification_expiry": {
+      "type": "string",
+      "format": "date",
+      "description": "ISO 8601 date on which this certification listing expires (YYYY-MM-DD). Vendors must re-assess and update the listing before this date."
+    },
+    "protocols_passed": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["atp", "aip", "asp", "aeap", "amgp", "aoap", "alcp"]
+      },
+      "uniqueItems": true,
+      "description": "List of AumOS protocol identifiers that passed conformance checks in the assessment."
+    },
+    "pass_rates": {
+      "type": "object",
+      "description": "Per-protocol pass rate as a percentage (0–100). Keys are protocol identifiers; values are pass rate percentages from the self-assessment run.",
+      "additionalProperties": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 100
+      }
+    },
+    "badge_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "URI pointing to the SVG badge file for this certification level."
+    },
+    "self_assessed": {
+      "type": "boolean",
+      "const": true,
+      "description": "Must always be true. All marketplace listings represent self-assessed conformance only. No AumOS or third-party verification is implied."
+    },
+    "report_hash": {
+      "type": "string",
+      "pattern": "^[a-fA-F0-9]{64}$",
+      "description": "SHA-256 hex digest of the assessment report JSON file. Used for integrity verification — allows anyone to confirm the listing matches the report on record."
+    },
+    "contact_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "Optional URI for vendor contact information or product page."
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "maxLength": 64
+      },
+      "maxItems": 20,
+      "uniqueItems": true,
+      "description": "Optional free-form tags for discoverability (e.g., 'customer-service', 'finance', 'healthcare')."
+    }
+  }
+}

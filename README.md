@@ -1,5 +1,7 @@
 # AumOS Trust Certification Toolkit
 
+[![Governance Score](https://img.shields.io/badge/governance-self--assessed-blue)](https://github.com/aumos-ai/trust-certification-toolkit)
+
 Self-assessment tools, conformance test automation, badge generation, and certification
 submission for the "AumOS Certified" badge program.
 

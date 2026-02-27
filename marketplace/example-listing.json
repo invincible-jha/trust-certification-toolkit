@@ -1,0 +1,20 @@
+{
+  "listing_id": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
+  "agent_name": "Acme Customer Support Agent v2.1",
+  "vendor": "Acme Corp",
+  "description": "Customer support agent for e-commerce platforms. Handles order inquiries, returns, and escalations. Built on the AumOS governance stack with full ATP and AEAP compliance.",
+  "certification_level": "silver",
+  "certification_date": "2026-02-01",
+  "certification_expiry": "2028-02-01",
+  "protocols_passed": ["atp", "aeap", "aoap"],
+  "pass_rates": {
+    "atp": 88.5,
+    "aeap": 82.0,
+    "aoap": 79.3
+  },
+  "badge_url": "https://cdn.acmecorp.example/badges/aumos-silver-self-assessed.svg",
+  "self_assessed": true,
+  "report_hash": "a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4",
+  "contact_url": "https://www.acmecorp.example/ai-agents/customer-support",
+  "tags": ["customer-service", "e-commerce", "english", "returns"]
+}
